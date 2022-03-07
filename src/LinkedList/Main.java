@@ -14,6 +14,7 @@ public class Main {
          * 4. Appending new nodes to end of linkedList
          * 5. Insert node in between two nodes
          * 6. Deleting first element of the list
+         * 7. Deleting last element of the list
          */
 
         /*
@@ -54,7 +55,7 @@ public class Main {
         list.printLinkedList(head4);
 
         /*
-         * 6. Delete first element of the list as in UC4
+         * 6. Delete first element of the list as in UC5
          */
         Node head5 = list.addNode(null, 56);
         list.addNode(head5, 30);
@@ -62,5 +63,13 @@ public class Main {
         list.printLinkedList(head5);
         head5 = list.pop(head5);
         list.printLinkedList(head5);
+
+        
+        Node head6 = list.addNode(null, 56);
+        list.addNode(head6, 30);
+        list.addNode(head6, 70);
+        list.printLinkedList(head6);
+        list.popLast(head6);
+        list.printLinkedList(head6);
     }
 }
