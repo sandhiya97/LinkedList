@@ -1,16 +1,27 @@
+package com;
+
 public class LinkedList {
 
     /**
-     * addNode - this method is created to add data to linedList
+     * addNode - this method is created to add data to linkedList
      *
      * @param head - accepting head pointer of LinkedList to manipulate it
-     * @param data - accepting data to put it in linkedList
+     * @param data - accepting data to create new node and add it in linkedList
      * @return head - it returns head of linkedList
      *
      */
     public Node addNode(Node head, int data) {
+        /*
+         * New node is created with the parameter data
+         */
         Node newNode = new Node(data);
 
+        /*
+         * If the param head is null, new node will be head
+         * else a separate pointer is created with head
+         * and pointer will be moved to last node in the list with while loop
+         * after reaching last node, it's next will be assigned to new node that was created earlier
+         */
         if (head == null) {
             head = newNode;
         } else {
@@ -22,41 +33,9 @@ public class LinkedList {
 
             pointer.next = newNode;
         }
-
         return head;
     }
 
-    public void printLinkedList(Node head) {
-        if (head == null) {
-            System.out.println("LinkedList is empty");
-        } else {
-            Node pointer = head;
-            while (pointer != null) {
-                System.out.print(pointer.data + " ");
-                pointer = pointer.next;
-            }
-        }
-    }
 
-    public Node deleteNodeFromStart(Node head) {
-        System.out.println("Deleted node from start : " + head.data);
-        head = head.next;
-        return head;
-    }
-
-    public void deleteNodeFromEnd(Node head) {
-        Node pointer = head;
-        Node prev = null;
-
-        while (pointer.next != null) {
-            prev = pointer;
-            pointer = pointer.next;
-        }
-        System.out.println("Deleted node from end : " + pointer.data);
-        prev.next = null;
-    }
-
-    public void deleteFromSpecificLocation(Node head, int positionOfNodeToBeDeleted) {
-
-    }
 }
+    
