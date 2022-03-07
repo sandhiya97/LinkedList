@@ -91,5 +91,50 @@ public class LinkedList {
         }
         return head;
     }
+    /**
+     * insertAt - this method is used to insert new node after the mentioned position in linkedList
+     *
+     * @param head - accepting head pointer of LinkedList to manipulate it
+     * @param position - accepting position to create new node and insert next to the position in linkedList
+     *
+     */
+    public void insertAt(Node head, int data, int position){
+        /*
+         * New node is created with the parameter data
+         */
+        Node newNode = new Node(data);
 
+        Node pointer = head;
+        int counter = 1;
+        while (counter < position-1) {
+            pointer = pointer.next;
+            counter++;
+        }
+        newNode.next = pointer.next;
+        pointer.next = newNode;
+
+    }
+
+    /**
+     * printLinkedList - this method is used to print nodes from head
+     *
+     * @param head - accepting head pointer of LinkedList to print it
+     *
+     */
+    public void printLinkedList(Node head){
+        /*
+         * If head position is null, then list will be empty.
+         * Else, a pointer will be created and every node will be printed one after another.
+         */
+        if (head == null) {
+            System.out.println("LinkedList is empty.\n");
+        } else {
+            Node pointer = head;
+            while (pointer != null) {
+                System.out.print(pointer.data + " ");
+                pointer = pointer.next;
+            }
+            System.out.println("\n");
+        }
+    }
 }
