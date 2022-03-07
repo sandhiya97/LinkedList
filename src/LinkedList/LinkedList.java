@@ -1,4 +1,4 @@
-package com;
+package LinkedList;
 
 public class LinkedList {
 
